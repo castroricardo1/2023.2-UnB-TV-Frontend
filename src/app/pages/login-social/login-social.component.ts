@@ -6,6 +6,13 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 declare var gapi: any;
 
+interface AuthResponse {
+  access_token?: string;
+  is_new_user?: boolean;
+  user_id?: string;
+}
+
+
 interface ServerResponse {
   access_token: string;
   is_new_user: boolean;
@@ -93,7 +100,7 @@ export class LoginSocialComponent implements OnInit {
       email: user.email
     };
   
-    this.Service.loginSocialUser(userSocialData).subscribe(
+    this.http.post<AuthResponse>('/api/auth/login/social', userSocialData).subscribe(
       (response) => {
         console.log('Resposta do servidor:', response);
   
