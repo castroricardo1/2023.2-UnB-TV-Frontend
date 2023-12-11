@@ -100,7 +100,7 @@ export class LoginSocialComponent implements OnInit {
       email: user.email
     };
   
-    this.http.post<AuthResponse>('/api/auth/login/social', userSocialData).subscribe(
+    this.http.post<AuthResponse>('https://unb-tv-backend-2be1ed3a0485.herokuapp.com/api/auth/login/social', userSocialData).subscribe(
       (response) => {
         console.log('Resposta do servidor:', response);
   
