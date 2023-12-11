@@ -65,7 +65,8 @@
               "browserTarget": "UnB-TV-Frontend:build:production"
             },
             "development": {
-              "browserTarget": "UnB-TV-Frontend:build:development"
+              "browserTarget": "UnB-TV-Frontend:build:development",
+              "proxyConfig": "src/proxy.conf.js"
             }
           },
           "defaultConfiguration": "development"
